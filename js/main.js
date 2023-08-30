@@ -42,25 +42,20 @@
 
 
 
-   // Burger Menu
-	var burgerMenu = function() {
+  var burgerMenu = function() {
+  $('body').on('click', '.js-fh5co-nav-toggle', function(event) {
+    event.preventDefault();
 
-		$('body').on('click', '.js-fh5co-nav-toggle', function(event){
+    if ($('#ftco-nav').hasClass('show')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+};
 
-			event.preventDefault();
+burgerMenu();
 
-			if ( $('#ftco-nav').is(':visible') ) {
-				$(this).removeClass('active');
-			} else {
-				$(this).addClass('active');	
-			}
-
-			
-			
-		});
-
-	};
-	burgerMenu();
 
 
 	var onePageClick = function() {
