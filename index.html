@@ -709,44 +709,25 @@
   
   <script src="js/main.js"></script>
 
-	  <script>
-	document.addEventListener("DOMContentLoaded", function () {
-	  const mobileMenuOverlay = document.getElementById("mobile-menu-overlay");
-	  const menuToggle = document.querySelector(".fh5co-nav-toggle");
-	  const menuContent = document.getElementById("ftco-nav");
+	   <script>
+	// Your other JavaScript code here...
   
-	  menuToggle.addEventListener("click", function () {
-		if (menuContent.classList.contains("show")) {
+	// Modified burgerMenu function
+	var burgerMenu = function() {
+	  $('body').on('click', '.js-fh5co-nav-toggle', function(event) {
+		event.preventDefault();
+  
+		if ($('#ftco-nav').hasClass('show')) {
 		  closeMenu();
 		} else {
 		  openMenu();
 		}
 	  });
+	};
   
-	  mobileMenuOverlay.addEventListener("click", function (event) {
-		if (menuContent.classList.contains("show") && !event.target.closest(".navbar-collapse")) {
-		  closeMenu();
-		}
-	  });
+	burgerMenu();
   
-	  // Close the menu when a menu item is clicked
-	  const menuItems = menuContent.querySelectorAll(".nav-link");
-	  menuItems.forEach(function (menuItem) {
-		menuItem.addEventListener("click", function () {
-		  closeMenu();
-		});
-	  });
-  
-	  function openMenu() {
-		menuContent.classList.add("show");
-		document.body.style.overflow = "hidden"; // Disable scrolling
-	  }
-  
-	  function closeMenu() {
-		menuContent.classList.remove("show");
-		document.body.style.overflow = "auto"; // Restore scrolling
-	  }
-	});
+	// Your other JavaScript code here...
   </script>
     
   </body>
